@@ -143,10 +143,71 @@ falsevar = 0
 ```
 
 The other way is to use a condition to dynamically resolve the value.
+Here are some of the common comparisions in the format of `y sign x` e.g. `y == x`.
 
-- `==`
-- `!=`
-- `<` and `>`
-- `=<` and `>=` or `<=` and `=>`
-- `is`
-- `in`
+- `==` y is equal to x
+- `!=` y is not equal to x
+- `<` and `>` y is less than x
+- `=<` and `>=` or `<=` and `=>` y is less than or equal to x
+- `is` y is an x object (same type of object)
+- `in` y is an element of x
+
+These comparisions can be strung together with `and` or `or`. 
+
+```
+print(True and 1+1 == 2) # True
+print(True and 1+2 == 2) # False
+print(True or 1+2 == 2) # True
+print(False or 1+2 == 2) # False
+```
+
+You can also enclose smaller conditionals with `()` to create a more indepth conditional.
+
+```
+print(True and (1+2 == 2 or True) ) # True
+print(True or (1+2 == 2 and True) ) # True
+```
+
+In general, think of `or` as adding the truth values together and `and` as multipling the values together. For more reading look [here](https://realpython.com/python-boolean/).
+
+## Code Blocks
+
+Here I will talk about the most common code blocks/snippets.
+
+### If Statement
+
+The If statement is a fundamental of coding given a certain check do the following code.
+
+```
+#if condition:
+    # Do code
+
+if True:
+    # Will print hello since the condition is true
+    print('Hello')
+
+if 1+1=3:
+    # Won't print anything since 1+1 is not equal to 3
+    print('equal')
+```
+
+The If Statement can be paired with an `else` for both cases the true and the false.
+
+```
+if 1+1=3:
+    # Won't print anything since 1+1 is not equal to 3
+    print('equal')
+else:
+    # Will print not equal since original condition was false
+    print('not equal')
+```
+
+Some things to keep in mind about If Statements is to 
+
+1. Keep nesting of If's to a minimum.
+1. Don't have an empty main if body and go straight to the else. If this is the case change your condition.
+
+You can write the if statement in shorthand like `true code if condition else false code`.
+### For loop
+
+If you can understand the for loop the rest of the loops should come easily to you. For loops in Python are diffrent than for loops in other lower level languages (PHP, C++, C#).
